@@ -6,18 +6,17 @@ TypeScript (jour 1 et matin du jour 2), puis une introduction à TypeScript dans
 
 ## Contenu
 
-| Dossier | Contenu | Distribué aux participants |
-|---|---|---|
-| `labs/hello-ts/` | Mini-labo de compilation (`tsc` émet du JavaScript) | oui |
-| `day-1-vanilla/` | Starter JavaScript (Vite), migré en TypeScript pendant le cours | oui |
-| `day-2-react/` | Starter React + TypeScript déjà initialisé | oui |
-| `exercises/` | Énoncés et tests des deux exercices, fichiers fournis pendant le cours (`exercises/fournis/`) | oui |
-| `docs/participants/` | Support de cours et guide de TP | oui |
-| `docs/handouts/` | Six fiches de révision | oui |
-| `docs/trainer/` | Plan pédagogique, guides formateur J1 et J2 | **non** |
-| `corrections/` | Corrigés finaux, jalons intermédiaires, patchs d'étapes | **non** (après la formation) |
-| `scripts/` | Vérifications, répétition des jalons, archives ZIP | formateur |
-| `docs/specifications/` | Cahier des charges et prescription d'origine | formateur |
+`labs/hello-ts/` - Mini-labo de compilation (`tsc` émet du JavaScript)
+
+`day-1-vanilla/` - Starter JavaScript (Vite), migré en TypeScript pendant le cours
+
+`day-2-react/` - Starter React + TypeScript déjà initialisé
+
+`exercises/` - Énoncés et tests des deux exercices, fichiers fournis pendant le cours (`exercises/fournis/`)
+
+`docs/participants/` - Support de cours et guide de TP
+
+`docs/handouts/` Six fiches de révision
 
 ## Prérequis
 
@@ -148,28 +147,3 @@ personnel puis ajoutée au `PATH`, ou un gestionnaire de versions utilisateur (n
   formateur) et `artifacts/formateur.zip` (dépôt complet). Remarque : `day-2-react/src/domain/`,
   `src/lib/` et `src/services/` contiennent les versions finales des modules métier écrits pendant le
   cours ; si cela pose problème, distribuer `day-2-react/` seulement le jour 2.
-
-## Vérification du dépôt (formateur)
-
-```bash
-scripts/verify-all.sh
-```
-
-Exécute, pour les 5 projets (`labs/hello-ts`, les deux starters et les deux corrigés) : `npm ci`,
-typecheck, tests et build ; puis vérifie que les fichiers métier copiés dans React sont synchronisés,
-que les patchs d'étapes sont à jour, que **chaque jalon** compile, passe ses tests et se construit, que
-chaque erreur volontaire des guides produit le diagnostic annoncé, et que les documents ne citent que des
-chemins, jalons et scripts existants. Avec `--smoke`, ajoute une recette navigateur de chaque jalon
-(nécessite Playwright installé sur la machine, hors dépendances des projets).
-
-La CI GitHub Actions (`.github/workflows/ci.yml`) exécute les mêmes contrôles à chaque `push` et pull
-request (pas sur un commit local). Elle est **démontrée par le formateur** ; les participants n'ont
-besoin d'aucun compte GitHub.
-
-## Documents
-
-- Formateur : `docs/trainer/plan-pedagogique.md`, `docs/trainer/jour-1.md`, `docs/trainer/jour-2.md`,
-  `corrections/README.md`.
-- Participants : `docs/participants/support-de-cours.md`, `docs/participants/guide-tp.md`,
-  `docs/handouts/`, `exercises/`.
-- Compte rendu de réalisation : `DELIVERY_REPORT.md`.
