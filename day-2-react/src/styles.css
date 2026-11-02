@@ -1,0 +1,225 @@
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #5f6b7a;
+  --color-border: #d5dbe1;
+  --color-primary: #1d4ed8;
+  --color-selected: #e0e9ff;
+  --radius: 8px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+.app-header {
+  padding: 1.5rem 1rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.app-header p {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+}
+
+.layout {
+  display: grid;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+@media (min-width: 800px) {
+  .layout {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex: 1 1 12rem;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.result-count {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.equipment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.equipment-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.75rem;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.equipment-item:hover {
+  border-color: var(--color-primary);
+}
+
+.equipment-item[aria-pressed='true'] {
+  background: var(--color-selected);
+  border-color: var(--color-primary);
+}
+
+.equipment-name {
+  font-weight: 600;
+}
+
+.equipment-category {
+  grid-column: 1;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.equipment-item .badge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-maintenance {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-inactive {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.empty,
+.placeholder,
+.message {
+  color: var(--color-muted);
+  padding: 0.75rem 0;
+}
+
+.message-error {
+  color: #b91c1c;
+}
+
+.detail dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1rem;
+  margin: 1rem 0;
+}
+
+.detail dt {
+  font-weight: 600;
+}
+
+.detail dd {
+  margin: 0;
+}
+
+.detail label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+button.retry {
+  font: inherit;
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  .detail {
+    position: sticky;
+    top: 1rem;
+  }
+}

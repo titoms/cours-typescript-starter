@@ -1,0 +1,22 @@
+{
+  // Configuration du mini-labo : contrairement aux projets Vite, elle ÉMET du JavaScript.
+  "compilerOptions": {
+    // Syntaxe JavaScript produite (ES2022 : `??` et `?.` sont conservés tels quels).
+    "target": "ES2022",
+    // API connues du vérificateur (ici Array.prototype.toSorted, ES2023). N'ajoute aucun polyfill.
+    "lib": ["ES2023"],
+    // Format des modules pour Node.js (package.json : "type": "module").
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    // Déclarations de Node.js (console, process) fournies par @types/node.
+    "types": ["node"],
+    "outDir": "dist",
+    "rootDir": ".",
+    // Fichier .map : relie le JS produit aux lignes du .ts d'origine.
+    "sourceMap": true,
+    // Si une erreur de type existe, aucun fichier n'est écrit dans dist/.
+    "noEmitOnError": true,
+    "strict": true
+  },
+  "include": ["index.ts"]
+}

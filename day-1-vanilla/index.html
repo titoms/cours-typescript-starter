@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipment Manager</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Equipment Manager</h1>
+      <p>Parc d'équipements fictif — les modifications restent en mémoire.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel" aria-labelledby="list-title">
+        <h2 id="list-title">Équipements</h2>
+        <div class="filters">
+          <div class="field">
+            <label for="search">Rechercher par nom</label>
+            <input id="search" type="search" placeholder="ex. oscilloscope" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="category">Catégorie</label>
+            <select id="category">
+              <option value="">Toutes les catégories</option>
+            </select>
+          </div>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+        <ul id="equipment-list" class="equipment-list"></ul>
+      </section>
+
+      <section id="equipment-detail" class="panel detail" aria-live="polite"></section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

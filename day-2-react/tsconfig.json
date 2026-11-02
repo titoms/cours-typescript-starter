@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    // JSX transformé par le runtime automatique de React 19 (pas d'import React nécessaire).
+    "jsx": "react-jsx",
+    // tsc vérifie seulement ; Vite produit le JavaScript.
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true
+  },
+  // vite.config.ts n'est pas inclus : il est chargé par Vite, pas par l'application.
+  "include": ["src"]
+}

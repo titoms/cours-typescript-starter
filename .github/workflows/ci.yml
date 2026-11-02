@@ -1,0 +1,61 @@
+# Démonstration de CI (formateur) : se déclenche sur push et pull request,
+# jamais sur un commit resté local.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  projects:
+    name: ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - labs/hello-ts
+          - day-1-vanilla
+          - day-2-react
+          - corrections/day-1-vanilla
+          - corrections/day-2-react
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.1
+      - name: Installation (lockfile)
+        run: npm ci
+      - name: Vérification des types
+        run: npm run typecheck --if-present
+      - name: Tests
+        run: npm test --if-present
+      - name: Build
+        run: npm run build
+
+  consistency:
+    name: Cohérence jalons / docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.1
+      - name: Installation des starters et du labo
+        run: |
+          npm ci --prefix labs/hello-ts
+          npm ci --prefix day-1-vanilla
+          npm ci --prefix day-2-react
+      - name: Fichiers métier partagés identiques
+        run: scripts/check-shared-sync.sh
+      - name: Patchs d'étapes à jour
+        run: scripts/generate-step-diffs.sh --check
+      - name: Tous les jalons compilent, passent les tests et se construisent
+        run: scripts/rehearse-milestones.sh
+      - name: Erreurs volontaires des guides
+        run: node scripts/check-error-demos.mjs
+      - name: Références des documents
+        run: node scripts/check-docs.mjs

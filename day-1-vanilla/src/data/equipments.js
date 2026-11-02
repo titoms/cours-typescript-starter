@@ -1,0 +1,21 @@
+// Données fictives : elles jouent le rôle de la réponse d'un serveur.
+export const equipments = [
+  { id: 1, name: 'Ordinateur portable PX-14', category: 'Informatique', status: 'active', description: 'Poste nomade du bureau d’études.' },
+  { id: 2, name: 'Écran 27 pouces', category: 'Informatique', status: 'active' },
+  { id: 3, name: 'Imprimante laser A3', category: 'Informatique', status: 'maintenance', description: 'Bourrages papier fréquents, intervention planifiée.' },
+  { id: 4, name: 'Serveur de fichiers', category: 'Informatique', status: 'active', description: 'Stockage partagé des plans.' },
+  { id: 5, name: 'Routeur principal', category: 'Réseau', status: 'active', description: 'Accès Internet du site.' },
+  { id: 6, name: 'Commutateur 48 ports', category: 'Réseau', status: 'active' },
+  { id: 7, name: 'Borne Wi-Fi atelier', category: 'Réseau', status: 'inactive', description: 'Remplacée par la borne du hall.' },
+  { id: 8, name: 'Pare-feu', category: 'Réseau', status: 'maintenance' },
+  { id: 9, name: 'Oscilloscope numérique', category: 'Mesure', status: 'active', description: 'Quatre voies, 200 MHz.' },
+  { id: 10, name: 'Multimètre de précision', category: 'Mesure', status: 'active' },
+  { id: 11, name: 'Thermomètre infrarouge', category: 'Mesure', status: 'inactive' },
+  { id: 12, name: 'Sonomètre', category: 'Mesure', status: 'maintenance', description: 'Étalonnage annuel en cours.' },
+  { id: 13, name: 'Perceuse à colonne', category: 'Atelier', status: 'active' },
+  { id: 14, name: 'Scie circulaire', category: 'Atelier', status: 'inactive', description: 'Lame à remplacer.' },
+  { id: 15, name: 'Compresseur d’air', category: 'Atelier', status: 'active', description: 'Cuve de 100 litres.' },
+  { id: 16, name: 'Extincteur CO2', category: 'Sécurité', status: 'active' },
+  { id: 17, name: 'Défibrillateur', category: 'Sécurité', status: 'active', description: 'Situé à l’accueil.' },
+  { id: 18, name: 'Détecteur de gaz', category: 'Sécurité', status: 'maintenance' },
+];
