@@ -6,14 +6,12 @@ TypeScript (jour 1 et matin du jour 2), puis une introduction à TypeScript dans
 
 ## Contenu
 
-| Dossier | Contenu |
-|---|---|---|
-| `labs/hello-ts/` | Mini-labo de compilation (`tsc` émet du JavaScript) |
-| `day-1-vanilla/` | Starter JavaScript (Vite), migré en TypeScript pendant le cours |
-| `day-2-react/` | Starter React + TypeScript déjà initialisé |
-| `exercises/` | Énoncés et tests des deux exercices, fichiers fournis pendant le cours (`exercises/fournis/`) |
-| `docs/participants/` | Support de cours et guide de TP |
-| `docs/handouts/` | Six fiches de révision |
+`labs/hello-ts/` - Mini-labo de compilation (`tsc` émet du JavaScript)
+`day-1-vanilla/` - Starter JavaScript (Vite), migré en TypeScript pendant le cours
+`day-2-react/` - Starter React + TypeScript déjà initialisé
+`exercises/` - Énoncés et tests des deux exercices, fichiers fournis pendant le cours (`exercises/fournis/`)
+`docs/participants/` - Support de cours et guide de TP
+`docs/handouts/` Six fiches de révision
 
 ## Prérequis
 
